@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme generator</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+
+    <header>Meme generator</header>
+    <div class="memes"></div>
+    <div class="canvas-container">
+        <input type="text" oninput="setLineTxt(this.value)">
+        <canvas id="my-canvas" height="750" width="750" onclick="draw(event)">
+        </canvas>
+    </div>
+    <div class="gallery">
+        <img src="img/0.jpg" id="0">
+        <img src="img/1.jpg" id="1">
+        <img src="img/2.jpg" id="2">
+        <img src="img/3.jpg" id="3">
+        <img src="img/4.jpg" id="4">
+    </div>
+    <script src="js/memeController.js"></script>
+    <script src="js/memeService.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/galleryService.js"></script>
+
+</body>
+
+</html>

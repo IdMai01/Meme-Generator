@@ -1,0 +1,38 @@
+body {
+    background-color: rgba(240, 248, 255, 0.888);
+}
+
+header {
+    height: 10vh;
+    padding-left: 2.5%;
+    padding-top: 30px;
+    font-size: 4rem;
+    background-color: rgba(84, 112, 233, 0.621);
+    border: 0.5vh solid black;
+    border-radius: 0.8vh;
+    color: azure;
+}
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 5px solid black;
+}
+.gallery{
+    display: none;
+}
+.canvas-container{
+    display: none;
+}
+.memes img{
+    margin-left: 40px;
+    border-radius: 15px;
+    height: 160px;
+    transition: 50ms;
+}
+.memes img:hover{
+    outline: solid red;
+    outline-offset: 1px solid black;
+    cursor: pointer;
+}
