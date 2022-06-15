@@ -6,28 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme generator</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body onload="init()">
-
-    <header>Meme generator</header>
-    <section class="gallery">
-        <div class="memes wrapper"></div>
-    </section>
-    <div class="canvas-container wrapper">
-        <canvas id="my-canvas" height="750" width="750">
-        </canvas>
-        <div class="costumization">
-            <input type="text" oninput="setLineTxt(this.value)" placeholder="Enter your text here" value=""
-                id="txt-input">
-            <input oninput="setColor(this.value,'fill')" type="color" value="#ffffff" class="fill">
-            <input oninput="setColor(this.value,'stroke')" type="color" class="stroke">
-            <button onclick="changeFontSize(8)">+</button>
-            <button onclick="changeFontSize(-8)">-</button>
-            <button onclick="switchLine()">sw</button>
+        <header>Meme generator</header>
+        <section class="gallery">
+            <div class="memes wrapper"></div>
+        </section>
+        <div class="canvas-container wrapper">
+            <canvas id="my-canvas" height="750" width="750">
+            </canvas>
+            <div class="costumization">
+                <input type="text" oninput="setLineTxt(this.value)" placeholder="Enter your text here" value=""
+                    id="txt-input">
+                <input oninput="setColor(this.value,'fill')" type="color" value="#ffffff" class="fill">
+                <input oninput="setColor(this.value,'stroke')" type="color" class="stroke">
+                <button onclick="changeFontSize(8)">+</button>
+                <button onclick="changeFontSize(-8)">-</button>
+                <button onclick="switchLine()">⇅</button>
+            </div>
         </div>
-    </div>
     <script src="js/memeService.js"></script>
     <script src="js/galleryService.js"></script>
     <script src="js/galleryController.js"></script>

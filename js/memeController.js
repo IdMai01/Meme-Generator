@@ -54,10 +54,11 @@ function drawText(text = gLastText.txt, x = gLastText.x, y = gLastText.y, fontSi
     saveLastTxt(text, x, y)
     gCtx.strokeStyle = txtParams.stroke
     gCtx.fillStyle = txtParams.fill
-    gCtx.font = `${fontSize}px Arial`
+    gCtx.font = `${fontSize}px Impact`
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
+
 function getImages() {
     return gImgs
 }

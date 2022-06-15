@@ -1,15 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: rgba(240, 248, 255, 0.888);
+    margin: 0;
+    width: 100%;
+    background-color: var(--clr0);
+
 }
 
 header {
+    background-color: var(--clr1);
+    font-family: Lato-Bold;
     height: 10vh;
+    padding-top: 2%;
     padding-left: 2.5%;
     font-size: 2rem;
-    background-color: rgba(84, 112, 233, 0.621);
-    border: 0.5vh solid black;
-    border-radius: 0.8vh;
-    color: azure;
+    color: var(--clr0);
+    border-bottom: 0.45vh solid black;
 }
 
 canvas {
@@ -17,31 +25,33 @@ canvas {
     margin: 0 auto;
     background-color: white;
     border-radius: 10px;
-    border: 5px solid black;
+    outline: 5px solid black;
 }
 
 .canvas-container {
-    max-width: 100%;
+    width: 70vw;
     display: none;
     grid-template-columns: 6fr 4fr;
     gap: 30px;
+    margin-left: 3vh;
 }
-.canvas-container>*{
+
+.canvas-container>* {
     height: 70vh;
 }
+
 .memes {
-    max-width: 100%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(82px, 135px));
+    gap: 2rem;
 }
 
 .gallery {
-    margin-top: 1vh;
-}
-
-.wrapper {
-    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85vw;
+    margin-top: 3vh;
 }
 
 .memes img {
@@ -50,14 +60,21 @@ canvas {
 }
 
 .memes img {
-    outline: 0.3vw solid rgba(0, 0, 0, 0.621);;
+    outline: 0.25vw solid rgb(0, 0, 0);
     border-radius: 15px;
     height: 100%;
-    transition: 90ms;
+    transition: 120ms;
 }
 
 .memes img:hover {
-    outline: 1vw solid rgba(84, 112, 233, 0.621);;
+    outline: 1.5vw solid var(--clr2);
     cursor: pointer;
-    transition: 60ms;
+    transition: 90ms;
+}
+
+.costumization {
+    width: 30vw;
+    display: grid;
+    grid-template-columns: 2 1fr;
+    grid-template-rows: 4 1fr;
 }
