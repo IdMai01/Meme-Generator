@@ -1,0 +1,33 @@
+
+.memes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(82px, 135px));
+    gap: 2rem;
+}
+
+.gallery {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85vw;
+    margin-top: 3vh;
+}
+
+.memes img {
+    object-fit: fill;
+    width: 90%;
+}
+
+.memes img {
+    outline: 0.25vw solid rgb(0, 0, 0);
+    border-radius: 50%;
+    height: 100%;
+    transition: 350ms;
+}
+
+.memes img:hover {
+    outline: 1.5vw solid var(--clr2);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 350ms;
+}

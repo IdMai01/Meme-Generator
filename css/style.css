@@ -3,18 +3,18 @@
 
 @import 'main.css';
 
-/* BASE 
+/* BASE  */
 @import 'basic/base.css';
-@import 'basic/layout.css';
+/* @import 'basic/layout.css';
 @import 'basic/helpers.css';
-@import 'basic/buttons.css';
+@import 'basic/buttons.css'; */
 
 /* COMPONENTS */
 @import 'compenents/header.css';
-/* @import 'compenents/card.css';
-@import 'compenents/footer.css';
-@import 'compenents/main-content.css';
-@import 'compenents/screens.css';
+@import 'compenents/canvas.css'; 
+@import 'compenents/gallery.css';
+/* @import 'compenents/main-content.css';
+@import 'compenents/screens.css'; */
 
-MEDIA QUERIES
-@import 'mq/mq.css' */
+/* MEDIA QUERIES */
+/* @import 'mq/mq.css' */

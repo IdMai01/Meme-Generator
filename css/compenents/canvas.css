@@ -1,0 +1,26 @@
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    outline: 5px solid black;
+}
+
+.canvas-container {
+    width: 70vw;
+    display: none;
+    grid-template-columns: 6fr 4fr;
+    gap: 30px;
+    margin-left: 3vh;
+}
+
+.canvas-container>* {
+    height: 70vh;
+}
+
+.costumization {
+    width: 30vw;
+    display: grid;
+    grid-template-columns: 2 1fr;
+    grid-template-rows: 4 1fr;
+}
