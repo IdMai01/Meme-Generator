@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    height: 6vh;
+    height: 10vh;
     padding-left: 2.5%;
     font-size: 2rem;
     background-color: rgba(84, 112, 233, 0.621);
@@ -11,6 +11,7 @@ header {
     border-radius: 0.8vh;
     color: azure;
 }
+
 canvas {
     display: block;
     margin: 0 auto;
@@ -18,20 +19,45 @@ canvas {
     border-radius: 10px;
     border: 5px solid black;
 }
-.gallery{
+
+.canvas-container {
+    max-width: 100%;
     display: none;
+    grid-template-columns: 6fr 4fr;
+    gap: 30px;
 }
-.canvas-container{
-    display: none;
+.canvas-container>*{
+    height: 70vh;
 }
-.memes img{
-    margin-left: 40px;
+.memes {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+}
+
+.gallery {
+    margin-top: 1vh;
+}
+
+.wrapper {
+    width: 100vw;
+}
+
+.memes img {
+    object-fit: fill;
+    width: 90%;
+}
+
+.memes img {
+    outline: 0.3vw solid rgba(0, 0, 0, 0.621);;
     border-radius: 15px;
-    height: 160px;
-    transition: 50ms;
+    height: 100%;
+    transition: 90ms;
 }
-.memes img:hover{
-    outline: solid red;
-    outline-offset: 1px solid black;
+
+.memes img:hover {
+    outline: 1vw solid rgba(84, 112, 233, 0.621);;
     cursor: pointer;
+    transition: 60ms;
 }
