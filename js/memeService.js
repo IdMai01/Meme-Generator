@@ -1,3 +1,4 @@
+'use strict'
 var gMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,

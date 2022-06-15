@@ -1,3 +1,4 @@
+'use strict'
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 var gImgs = [
     { id: 0, url: 'img/0.jpg', keywords: ['funny', 'cat'] },
@@ -30,7 +31,7 @@ function renderMeme() {
 function drawText(text = gLastText.txt, x = gLastText.x, y = gLastText.y) {
     console.log('text,x,y: ', text, x, y)
     gCtx.lineWidth = 2;
-    txtParams = getTxtParams()
+    var txtParams = getTxtParams()
     if(text !== ' '){
         saveLastTxt(text, x, y)
     }
