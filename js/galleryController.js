@@ -1,4 +1,3 @@
-renderGallery()
 function renderGallery() {
     var images = getImages()
     var strHtml = ''

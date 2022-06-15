@@ -5,8 +5,7 @@ body {
 header {
     height: 6vh;
     padding-left: 2.5%;
-    padding-top: 30px;
-    font-size: 4rem;
+    font-size: 2rem;
     background-color: rgba(84, 112, 233, 0.621);
     border: 0.5vh solid black;
     border-radius: 0.8vh;
