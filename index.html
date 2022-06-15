@@ -13,8 +13,12 @@
 
     <header>Meme generator</header>
     <div class="memes"></div>
-    <div class="canvas-container">
-        <input type="text" oninput="setLineTxt(this.value)">
+    <div class="canvas-containers">
+        <div class="costumization">
+            <input oninput="changeColor(this.value,fill)" type="color" name="" value="#ffffff" class="fill-color">
+            <input oninput="changeColor(this.value,stroke)" type="color" name="" id="">
+            <input type="text" oninput="setLineTxt(this.value)">
+        </div>
         <canvas id="my-canvas" height="750" width="750" onclick="draw(event)">
         </canvas>
     </div>
