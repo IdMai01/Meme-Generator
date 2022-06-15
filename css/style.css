@@ -9,9 +9,9 @@
 @import 'basic/helpers.css';
 @import 'basic/buttons.css';
 
-COMPONENTS
+/* COMPONENTS */
 @import 'compenents/header.css';
-@import 'compenents/card.css';
+/* @import 'compenents/card.css';
 @import 'compenents/footer.css';
 @import 'compenents/main-content.css';
 @import 'compenents/screens.css';

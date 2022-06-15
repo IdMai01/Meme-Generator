@@ -51,7 +51,7 @@ function setColor(color, type) {
     } else {
         currLine.stroke = color
     }
-    drawText(currLine.txt,currLine.x,currLine.y,currLine.font)
+    drawTexts()
 
 }
 function getTxtParams() {
@@ -60,7 +60,7 @@ function getTxtParams() {
 function changeFontSize(num) {
     var currLine = gMeme.lines[gMeme.selectedLineIdx]
     currLine.font += num
-    drawText(currLine.txt,currLine.x,currLine.y,currLine.font)
+    drawTexts()
 }
 function switchLine() {
     if (gMeme.selectedLineIdx < gMeme.lines.length - 1) {

@@ -39,26 +39,21 @@ function renderMeme() {
     var elImg = new Image
     elImg.src = gImgs[currMeme.selectedImgId].url
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
-    drawTexts(currMeme)
+    drawTexts()
 }
-function drawTexts(currMeme) {
+function drawTexts() {
+    var currMeme = getMeme()
     for (var i = 0; i < currMeme.lines.length; i++) {
         var currLine = currMeme.lines[i]
-        drawText(currLine.txt, currLine.x, currLine.y)
+        gCtx.lineWidth = 2;
+        gCtx.strokeStyle = currLine.stroke
+        gCtx.fillStyle = currLine.fill
+        gCtx.font = `${currLine.font}px Impact`
+        gCtx.fillText(currLine.txt, currLine.x, currLine.y)
+        gCtx.strokeText(currLine.txt, currLine.x, currLine.y)
     }
 
 }
-function drawText(text = gLastText.txt, x = gLastText.x, y = gLastText.y, fontSize = 60) {
-    gCtx.lineWidth = 2;
-    var txtParams = getTxtParams()
-    saveLastTxt(text, x, y)
-    gCtx.strokeStyle = txtParams.stroke
-    gCtx.fillStyle = txtParams.fill
-    gCtx.font = `${fontSize}px Impact`
-    gCtx.fillText(text, x, y)
-    gCtx.strokeText(text, x, y)
-}
-
 function getImages() {
     return gImgs
 }
