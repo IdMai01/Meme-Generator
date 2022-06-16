@@ -1,5 +1,7 @@
 .center {
-    display: block;
-    position: fixed;
-    margin: 0 auto;
+align-items: center;
+justify-content: center;
+}
+.flex{
+    display: flex;
 }

@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme generator</title>
+    <title>Meme Generator</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body onload="init()">
-    <section class="header-layout">
-        <header>Meme generator</header>
+    <section class="header-layout flex center">
+        <button class="header" onclick="goToHomepage()">Meme generator</button>
+        <button onclick="renderSavedMemes()">My memes</button>
+        <button onclick="goToHomepage()">back to HomePage</button>
     </section>
     <section class="search-bar">
         <button onclick="setRandomMeme()">Im flexible</button>
@@ -35,7 +37,10 @@
             <button class="soft" onclick="switchLine()">⇅</button>
             <button class="soft" onclick="switchLine()">⇅</button>
             <button class="save soft" onclick="saveMeme()">save</button>
+            <button class="soft" onclick="moveLine(1)">↑</button>
+            <button class="soft" onclick="moveLine(-1)">↓</button>
         </div>
+        <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
     </div>
     <script src="js/services/storage.service.js"></script>
     <script src="js/utils.js"></script>

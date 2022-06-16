@@ -15,7 +15,7 @@ const memesSentences = [
     'JS what is this?',
     'Write hello world , add to cv 7 years experienced',
 ];
-const STORAGE_KEY = 'memeDB'
+var STORAGE_KEY = 'memeDB'
 function getRandomIntInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -36,6 +36,23 @@ function getFontSize(txt) {
     var fontSize = (Math.round(750 / txt.length) + 1)
     return fontSize
 }
-function saveMeme(){
-    saveToStorage(STORAGE_KEY, getMeme())
+function saveMeme() {
+    var memes = getMeme()
+    memes = switchSavedStatus(memes)
+    saveToStorage(STORAGE_KEY, memes.lines)
+    STORAGE_KEY += '1'
+    console.log('meme saved')
+}
+function switchSavedStatus(memes,boolen = true) {
+    for (var i = 0; i < memes.lines.length; i++) {
+        memes.lines[i].isSaved = true
+    }
+    return memes
+}
+function getKey(){
+    return STORAGE_KEY
+}
+function downloadImg(elLink) {
+    var imgContent = gCanvas.toDataURL('image/jpeg')
+    elLink.href = imgContent
 }

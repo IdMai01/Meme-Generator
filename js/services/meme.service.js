@@ -1,26 +1,33 @@
 'use strict'
-var gMeme = {
-    selectedImgId: 0,
-    selectedLineIdx: 0,
-    isRandom: false,
-    lines: [{
-        txt: 'Enter your text here',
-        align: 'left',
-        fill: 'white',
-        stroke: 'black',
-        font: 78,
-        x: 50,
-        y: 150
-    }, {
-        txt: 'Enter your text here',
-        align: 'left',
-        fill: 'white',
-        stroke: 'black',
-        font: 78,
-        x: 50,
-        y: 650
+var gMeme
+
+function resetMeme() {
+    gMeme = {
+        selectedImgId: 0,
+        selectedLineIdx: 0,
+        isRandom: false,
+        lines: [{
+            id: 0,
+            txt: 'Enter your text here',
+            align: 'left',
+            fill: 'white',
+            stroke: 'black',
+            font: 78,
+            x: 50,
+            y: 150,
+            isSaved: false
+        }, {
+            id: 0,
+            txt: 'Enter your text here',
+            align: 'left',
+            fill: 'white',
+            stroke: 'black',
+            font: 78,
+            x: 50,
+            y: 650
+        }
+        ]
     }
-    ]
 }
 
 function getMeme() {
@@ -45,6 +52,8 @@ function setLineTxt(text) {
 }
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
+    gMeme.lines[0].id = imgId
+    gMeme.lines[1].id = imgId
     document.querySelector('.memes').style.display = 'none'
     document.querySelector('.canvas-layout').style.display = 'grid'
     document.querySelector('.search-bar').style.display = 'none'
@@ -67,8 +76,8 @@ function changeFontSize(num) {
     var currLine = gMeme.lines[gMeme.selectedLineIdx]
     currLine.font += num
     var elTxt = document.querySelector('.txt-input')
-
-    drawTexts(elTxt.value)
+    renderMeme()
+    // drawTexts(elTxt.value)
 }
 function switchLine() {
     if (gMeme.selectedLineIdx < gMeme.lines.length - 1) {

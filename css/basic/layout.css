@@ -1,3 +1,16 @@
+.header-layout{
+    background-color: var(--clr1);
+    font-family: Lato-Bold;
+    height: 10vh;
+    font-size: 1rem;
+    padding-left: 2.5%;
+    color: var(--clr0);
+    border-bottom: 0.45vh solid black;
+}
+.header-layout>*{
+margin-right: 10%;
+}
+
 .canvas-layout {
     height: 77vh;
     display: none;

@@ -13,12 +13,48 @@
         width: fit-content;
         margin: 0 auto;
         display: none;
-        grid-template-columns: minmax(350px,45vw);
+        grid-template-columns: minmax(350px, 45vw);
         grid-template-rows: min-content;
-        row-gap:4vh ;
+        row-gap: 4vh;
     }
-    
 
+    .header-layout>* {
+        font-size: 4vw;
+    }
+
+    .header-layout>*:hover {
+        font-size: 21px;
+    }
+
+    .header-layout>*:nth-child(1) {
+        font-size: 6vw;
+    }
+
+    .header-layout>*:nth-child(1):hover {
+        font-size: 6.5vw;
+    }
 }
 
+@media (max-width: 1020px) {
+    .header-layout>* {
+        font-size: 16px;
+    }
 
+    .header-layout button {
+        font-size: 17px;
+    }
+
+    .header-layout>*:nth-child(1) {
+        font-size: 20px;
+    }
+
+    .header-layout>*:nth-child(1):hover {
+        font-size: 23px;
+    }
+}
+
+@media (min-width: 1020px) {
+    .header-layout>*:nth-child(1) {
+        font-size: 1.9em;
+    }
+}

@@ -1,6 +1,10 @@
 'use strict'
-function renderGallery() {
-    var images = getImages()
+function renderGallery(saved = false) {
+    if (saved) {
+        var images = saved
+    } else {
+        var images = getImages()
+    }
     var strHtml = ''
     for (var i = 0; i < images.length; i++) {
         strHtml +=

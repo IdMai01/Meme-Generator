@@ -31,16 +31,17 @@ var gLastText = {
 }
 
 
-function init() {
+function init(saved = false) {
+    resetMeme()
     gCanvas = document.getElementById('my-canvas')
     gCtx = gCanvas.getContext('2d')
-    renderGallery()
+    renderGallery(saved)
     renderMeme()
 }
 function renderMeme() {
     var currMeme = getMeme()
     var elImg = new Image
-    elImg.src = gImgs[currMeme.selectedImgId].url
+    elImg.src = gImgs[currMeme.lines[0].id].url
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
     drawTexts()
 }
@@ -55,4 +56,22 @@ function saveLastTxt(txt, x, y) {
 function getMemesAmount() {
     return gImgs.length
 }
-
+function goToHomepage() {
+    switchSavedStatus(getMeme(), false)
+    document.querySelector('.memes').style.display = 'grid'
+    document.querySelector('.canvas-layout').style.display = 'none'
+    document.querySelector('.search-bar').style.display = 'block'
+    init()
+}
+function renderSavedMemes() {
+    var memes = loadFromStorage(getKey())
+    console.log('memes: ', memes)
+    console.log(': ', getMeme())
+    goToHomepage()
+    init(memes)
+}
+function moveLine(num) {
+    var meme = getMeme()
+    meme.lines[meme.selectedLineIdx].y += 20 * num
+    renderMeme()
+}
