@@ -14,6 +14,7 @@ canvas {
 
 
 .costumization {
+    padding-left: 10px;
     background-color: var(--btn1);
     border-radius: 00.8vw;
     border: 2px solid black;
@@ -24,8 +25,12 @@ canvas {
     grid-row-gap: 0px;
 }
 
+.color-pickers {
+    padding-right: 6px;
+}
+
 .txt-input {
-    grid-column: 1 / 6;
+    grid-column: 1 / 5;
     height: 50%;
     width: 80%;
     margin-left: 10%;
