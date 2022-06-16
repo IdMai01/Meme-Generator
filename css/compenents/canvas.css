@@ -1,26 +1,35 @@
+#my-canvas {
+    width: 80%;
+    min-width: 350px;
+    max-height: 750px;
+}
+
 canvas {
-    display: block;
     margin: 0 auto;
+    display: block;
     background-color: white;
     border-radius: 10px;
     outline: 5px solid black;
 }
 
-.canvas-container {
-    width: 70vw;
-    display: none;
-    grid-template-columns: 6fr 4fr;
-    gap: 30px;
-    margin-left: 3vh;
-}
-
-.canvas-container>* {
-    height: 70vh;
-}
 
 .costumization {
-    width: 30vw;
+    background-color: var(--btn1);
+    border-radius: 00.8vw;
+    border: 2px solid black;
     display: grid;
-    grid-template-columns: 2 1fr;
-    grid-template-rows: 4 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+}
+
+.txt-input {
+    grid-column: 1 / 6;
+    height: 50%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    border: 2px solid black;
+    border-radius: 0.8vw;
 }

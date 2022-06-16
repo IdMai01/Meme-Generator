@@ -45,10 +45,10 @@ function drawTexts() {
     var currMeme = getMeme()
     for (var i = 0; i < currMeme.lines.length; i++) {
         var currLine = currMeme.lines[i]
+        gCtx.font = `${currLine.font}px Impact`
         gCtx.lineWidth = 2;
         gCtx.strokeStyle = currLine.stroke
         gCtx.fillStyle = currLine.fill
-        gCtx.font = `${currLine.font}px Impact`
         gCtx.fillText(currLine.txt, currLine.x, currLine.y)
         gCtx.strokeText(currLine.txt, currLine.x, currLine.y)
     }

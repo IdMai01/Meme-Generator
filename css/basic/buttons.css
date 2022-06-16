@@ -1,0 +1,56 @@
+button {
+    height: 40px;
+    width: 40px;
+}
+
+.soft {
+    border: 0cm solid beige;
+    text-decoration: none;
+    background-color: var(--btn1);
+    color: rgba(255, 255, 255, 0.721);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        5px 5px 10px var(--btn2), -5px -5px 10px var(--btn3);
+}
+
+.soft:hover {
+    cursor: pointer;
+}
+
+.soft:focus {
+    animation: shadow .15s ease-in-out;
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow:
+            inset 5px 5px 10px var(--btn2), inset -5px -5px 10px var(--btn3);
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+.color-pickers>* {
+    margin: auto;
+    padding: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 0.4rem;
+    background-color: rgba(255, 222, 173, 0);
+    border: 0ch;
+    transition: 400ms;
+}
+
+.color-pickers>*:hover {
+    transition: 400ms;
+    background-color: rgba(240, 248, 255, 0.89);
+    outline: 1px solid black;
+    cursor: pointer;
+}

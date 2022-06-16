@@ -1,0 +1,12 @@
+.canvas-layout {
+    height: 77vh;
+    display: none;
+    margin-left: 6vw;
+    grid-template-columns: minmax(350px,45vw) 0.65fr;
+    grid-template-rows: minmax(350px,35vw);
+    column-gap: 6vw;
+}
+
+.canvas-layout>* {
+    height: 100%;
+}

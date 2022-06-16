@@ -1,8 +1,11 @@
 :root {
-    --clr0: #ffffff;
-    --clr1: #d33a2c;
+    --clr0: rgb(255, 255, 255);
+    --clr1: rgb(211, 58, 44);
     --clr2: #ffe7e7df;
-    --clr3: #009393;
-    --clr4: #016170;
+    --clr3: hwb(5 20% 3%);
+    --btn1: #cb611a;
+    --btn2: #ad5216;
+    --btn3: #e9701e;
+    
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

@@ -41,7 +41,7 @@ function setLineTxt(text) {
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
     document.querySelector('.memes').style.display = 'none'
-    document.querySelector('.canvas-container').style.display = 'grid'
+    document.querySelector('.canvas-layout').style.display = 'grid'
     renderMeme()
 }
 function setColor(color, type) {
