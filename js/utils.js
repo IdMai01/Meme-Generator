@@ -15,7 +15,7 @@ const memesSentences = [
     'JS what is this?',
     'Write hello world , add to cv 7 years experienced',
 ];
-
+const STORAGE_KEY = 'memeDB'
 function getRandomIntInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -35,4 +35,7 @@ function getRandomTxt() {
 function getFontSize(txt) {
     var fontSize = (Math.round(750 / txt.length) + 1)
     return fontSize
+}
+function saveMeme(){
+    saveToStorage(STORAGE_KEY, getMeme())
 }
