@@ -13,6 +13,9 @@
     <section class="header-layout">
         <header>Meme generator</header>
     </section>
+    <section class="search-bar">
+        <button onclick="setRandomMeme()">Im flexible</button>
+    </section>
     <section class="main-layout">
         <section class="gallery">
             <div class="memes wrapper"></div>
@@ -20,21 +23,23 @@
     </section>
     <div class="canvas-layout">
         <canvas id="my-canvas" height="750" width="750"></canvas>
-            <div class="costumization">
-                <input type="text" oninput="setLineTxt(this.value)" placeholder="Enter your text here" class="txt-input" value=""
-                id="txt-input">
-                <div class="color-pickers">
-                    <input oninput="setColor(this.value,'fill')" type="color" value="#ffffff" class="fill">
-                    <input oninput="setColor(this.value,'stroke')" type="color" class="stroke">
-                </div>
-                    <button class="soft" onclick="changeFontSize(8)">+</button>
-                <button class="soft" onclick="changeFontSize(-8)">-</button>
-                <button class="soft" onclick="switchLine()">⇅</button>
-                <button class="soft" onclick="switchLine()">⇅</button>
+        <div class="costumization">
+            <input type="text" oninput="setLineTxt(this.value)" placeholder="Enter your text here" class="txt-input"
+                value="" id="txt-input">
+            <div class="color-pickers">
+                <input oninput="setColor(this.value,'fill')" type="color" value="#ffffff" class="fill">
+                <input oninput="setColor(this.value,'stroke')" type="color" class="stroke">
             </div>
+            <button class="soft" onclick="changeFontSize(8)">+</button>
+            <button class="soft" onclick="changeFontSize(-8)">-</button>
+            <button class="soft" onclick="switchLine()">⇅</button>
+            <button class="soft" onclick="switchLine()">⇅</button>
         </div>
-    <script src="js/memeService.js"></script>
-    <script src="js/galleryService.js"></script>
+    </div>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/services/gallery.service.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>
 
