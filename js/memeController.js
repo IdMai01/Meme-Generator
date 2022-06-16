@@ -20,7 +20,7 @@ var gImgs = [
     { id: 16, url: 'img/16.jpg', keywords: ['funny', 'startrak'] },
     { id: 17, url: 'img/17.jpg', keywords: ['funny', 'putin'] },
     { id: 18, url: 'img/18.jpg', keywords: ['funny', 'confused'] },
-    { id: 19, url: 'img/19.jpg', keywords: ['funny', 'confused'] },
+
 ]
 var gCanvas
 var gCtx
