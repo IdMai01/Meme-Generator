@@ -5,7 +5,6 @@
     background-color: transparent;
     border-color: transparent;
     transition: 500ms;
-    font-family: Ubuntu-title;
 }
 
 .header-layout button:hover {

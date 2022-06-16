@@ -39,8 +39,15 @@
             <button class="save soft" onclick="saveMeme()">save</button>
             <button class="soft" onclick="moveLine(1)">↑</button>
             <button class="soft" onclick="moveLine(-1)">↓</button>
+            <select onchange="setFont(this.value)" name="" id="">
+                <option class="Impact" value="Impact">Impact</option>
+                <option class="Lato-Bold" value="Lato-Bold">Lato-Bold</option>
+                <option class="Ubuntu-title" value="Ubuntu-title">Ubuntu-title</option>
+                <option class="eurofurence" value="eurofurence">eurofurence</option>
+                <option class="fa-brands" value="fa-brands">fa-brands</option>
+            </select>
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
         </div>
-        <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
     </div>
     <script src="js/services/storage.service.js"></script>
     <script src="js/utils.js"></script>

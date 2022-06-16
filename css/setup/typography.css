@@ -6,3 +6,28 @@
 	font-family: Lato-Bold;
 	src: url(../../fonts/Lato-Bold.ttf);
 }
+@font-face {
+	font-family: fa-brands;
+	src: url(../../fonts/fa-brands-400.ttf);
+}
+@font-face {
+	font-family: eurofurence;
+	src: url(../../fonts/Eurofurence.ttf);
+}
+.eurofurence{
+	font-family: eurofurence;
+}
+
+.Lato-Bold{
+	font-family: Lato-Bold;
+}
+.fa-brands{
+	font-family: fa-brands;
+	font-size: 0.9rem;
+}
+.Ubuntu-title{
+	font-family: Ubuntu-title;
+}
+.Impcat{
+	font-family: Impact;
+}

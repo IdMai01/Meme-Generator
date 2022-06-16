@@ -15,7 +15,8 @@ function resetMeme() {
             font: 78,
             x: 50,
             y: 150,
-            isSaved: false
+            isSaved: false,
+            fontFam: 'Impact'
         }, {
             id: 0,
             txt: 'Enter your text here',
@@ -24,7 +25,9 @@ function resetMeme() {
             stroke: 'black',
             font: 78,
             x: 50,
-            y: 650
+            y: 650,
+            isSaved: false,
+            fontFam: 'Impact'
         }
         ]
     }
@@ -38,7 +41,7 @@ function drawTexts() {
     var currMeme = getMeme()
     for (var i = 0; i < currMeme.lines.length; i++) {
         var currLine = currMeme.lines[i]
-        gCtx.font = `${currLine.font}px Impact`
+        gCtx.font = `${currLine.font}px ${currLine.fontFam}`
         gCtx.lineWidth = 2;
         gCtx.strokeStyle = currLine.stroke
         gCtx.fillStyle = currLine.fill
@@ -102,3 +105,14 @@ function setRandomTxts() {
         currLine.font = getFontSize(currLine.txt) * 1.9
     }
 }
+function setFont(font) {
+    console.log('font: ',font)
+    for (var i = 0; i < gMeme.lines.length; i++) {
+        if (font === '') {
+            font = 'Impact'
+        }
+        gMeme.lines[i].fontFam = font
+    }
+    renderMeme()
+}
+// const font = document.querySelector('.fontFam').value
