@@ -1,8 +1,9 @@
 .search-bar {
     font-family: Lato-Bold;
     height: 8vh;
-    padding-top: 1%;
+    padding-top: 0.5%;
     padding-left: 2.5%;
+    padding-bottom: 0.5%;
     border-bottom: 0.25vh solid black;
 }
 

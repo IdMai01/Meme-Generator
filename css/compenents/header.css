@@ -5,11 +5,12 @@
     background-color: transparent;
     border-color: transparent;
     transition: 500ms;
+    font-family: Ubuntu-title;
 }
 
 .header-layout button:hover {
     color: rgb(255, 255, 255);
-    /* font-size: 1.9rem; */
+    font-size: 1.9rem;
     cursor: pointer;
 }
 
@@ -17,6 +18,7 @@
     color: aliceblue;
     font-size: 2.4rem;
     transition: 500ms;
+    font-family: Impact, sans-serif;
 
 }
 
