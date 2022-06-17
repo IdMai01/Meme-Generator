@@ -15,7 +15,6 @@ function resetMeme() {
             font: 78,
             x: 50,
             y: 150,
-            isSaved: false,
             fontFam: 'Impact'
         }, {
             id: 0,
@@ -26,7 +25,6 @@ function resetMeme() {
             font: 78,
             x: 50,
             y: 650,
-            isSaved: false,
             fontFam: 'Impact'
         }
         ]
@@ -115,4 +113,3 @@ function setFont(font) {
     }
     renderMeme()
 }
-// const font = document.querySelector('.fontFam').value

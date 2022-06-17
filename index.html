@@ -17,6 +17,11 @@
     </section>
     <section class="search-bar">
         <button onclick="setRandomMeme()">Im flexible</button>
+        <label for="tag-choice">Filter by tags:</label>
+        <input onchange="FilterByTag(this.value)" list="filter-by-tags" id="tag-choice" name="tag-choice" />
+        <datalist class="filter-by-tags" id="filter-by-tags">
+            <option value=''>
+        </datalist>
     </section>
     <section class="main-layout">
         <section class="gallery">
@@ -46,9 +51,10 @@
                 <option class="eurofurence" value="eurofurence">eurofurence</option>
                 <option class="fa-brands" value="fa-brands">fa-brands</option>
             </select>
-                <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
+            <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
         </div>
     </div>
+    <script src="js/services/tags.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/services/meme.service.js"></script>

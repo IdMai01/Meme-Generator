@@ -31,7 +31,7 @@
     }
 
     .header-layout>*:nth-child(1):hover {
-        font-size: 6.5vw;
+        font-size: 6vw;
     }
 }
 
@@ -50,11 +50,5 @@
 
     .header-layout>*:nth-child(1):hover {
         font-size: 23px;
-    }
-}
-
-@media (min-width: 1020px) {
-    .header-layout>*:nth-child(1) {
-        font-size: 1.9em;
     }
 }
