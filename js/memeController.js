@@ -57,7 +57,6 @@ function getMemesAmount() {
     return gImgs.length
 }
 function goToHomepage() {
-    switchSavedStatus(getMeme(), false)
     document.querySelector('.memes').style.display = 'grid'
     document.querySelector('.canvas-layout').style.display = 'none'
     document.querySelector('.search-bar').style.display = 'block'
