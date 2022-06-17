@@ -33,6 +33,17 @@
     .header-layout>*:nth-child(1):hover {
         font-size: 6vw;
     }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        height: fit-content;
+    }
+    .search-bar button{
+        margin-left: 10px;
+        width: 15%;
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 1020px) {

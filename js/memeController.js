@@ -65,7 +65,7 @@ function goToHomepage() {
 function renderSavedMemes() {
     // var memes = loadFromStorage(getKey())
     // goToHomepage()
-    alert('Not supported yet')
+    alert('this feature is not supported yet')
 }
 
 function moveLine(num) {

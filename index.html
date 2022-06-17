@@ -15,13 +15,13 @@
         <button onclick="renderSavedMemes()">My memes</button>
         <button onclick="goToHomepage()">back to HomePage</button>
     </section>
-    <section class="search-bar">
-        <button onclick="setRandomMeme()">Im flexible</button>
+    <section class="search-bar ">
         <label for="tag-choice">Filter by tags:</label>
         <input onchange="FilterByTag(this.value)" list="filter-by-tags" id="tag-choice" name="tag-choice" />
         <datalist class="filter-by-tags" id="filter-by-tags">
             <option value=''>
-        </datalist>
+            </datalist>
+            <button onclick="setRandomMeme()">Generate random meme</button>
     </section>
     <section class="main-layout">
         <section class="gallery">
@@ -42,8 +42,8 @@
             <button class="soft" onclick="switchLine()">⇅</button>
             <button class="soft" onclick="switchLine()">⇅</button>
             <button class="save soft" onclick="saveMeme()">save</button>
-            <button class="soft" onclick="moveLine(1)">↑</button>
-            <button class="soft" onclick="moveLine(-1)">↓</button>
+            <button class="soft" onclick="moveLine(-1)">↑</button>
+            <button class="soft" onclick="moveLine(1)">↓</button>
             <select onchange="setFont(this.value)" name="" id="">
                 <option class="Impact" value="Impact">Impact</option>
                 <option class="Lato-Bold" value="Lato-Bold">Lato-Bold</option>

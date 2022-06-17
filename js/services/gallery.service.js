@@ -1,10 +1,12 @@
 'use strict'
-function renderGallery() {
-    var images = getImages()
+function renderGallery(images = false) {
+    if (!images) {
+        images = getImages()
+    }
     var strHtml = ''
     for (var i = 0; i < images.length; i++) {
         strHtml +=
-            `<img onclick="onImgSelect(this.id)" src="img/${i}.jpg" id="${i}">`
+            `<img onclick="onImgSelect(this.id)" src="img/${images[i].id}.jpg" id="${images[i].id}">`
     }
     document.querySelector('.memes').innerHTML = strHtml
 }
