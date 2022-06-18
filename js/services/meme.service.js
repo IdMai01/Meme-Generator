@@ -44,11 +44,11 @@ function drawTexts(isDownlad = false) {
         gCtx.fillText(currLine.txt, currLine.x, currLine.y)
         gCtx.strokeText(currLine.txt, currLine.x, currLine.y)
         gCtx.stroke()
-        if(i === currMeme.selectedLineIdx && !isDownlad){
-        gCtx.strokeStyle = 'white'
+        if (i === currMeme.selectedLineIdx && !isDownlad) {
+            gCtx.strokeStyle = 'white'
             var lineHeight = currLine.font * 1.2
             var textWidth = gCtx.measureText(currLine.txt).width
-            gCtx.strokeRect(currLine.x,currLine.y, textWidth, lineHeight);
+            gCtx.strokeRect(currLine.x, currLine.y, textWidth, lineHeight);
             gCtx.textAlign = 'left';
             gCtx.textBaseline = 'top';
         }
@@ -155,4 +155,27 @@ function addLine() {
     renderMeme()
     switchLine()
     syncInputBoxes()
+}
+function resetLinesAndSticker() {
+    setCurrSticker()
+    gMeme.lines = [{
+        txt: 'Enter your text here',
+        align: 'left',
+        fill: '#ffffff',
+        stroke: 'black',
+        font: 78,
+        x: 50,
+        y: 150,
+        fontFam: 'Impact'
+    }, {
+        txt: 'Enter your text here',
+        align: 'left',
+        fill: '#ffffff',
+        stroke: 'black',
+        font: 78,
+        x: 50,
+        y: 600,
+        fontFam: 'Impact'
+    }
+    ]
 }

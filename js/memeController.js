@@ -39,11 +39,15 @@ function init() {
     renderMeme()
 }
 function renderMeme(isDownload = false) {
+    var currSticker = getCurrSticker()
     var currMeme = getMeme()
     var elImg = new Image
     elImg.src = gImgs[currMeme.selectedImgId].url
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
     drawTexts(isDownload)
+    if(currSticker){
+        addSticker(currSticker)
+    }
 }
 function getImages() {
     return gImgs
@@ -73,6 +77,11 @@ function moveLine(num) {
     meme.lines[meme.selectedLineIdx].y += 20 * num
     renderMeme()
 }
+function addSticker(stickerId) {
+    var elImg = new Image
+    elImg.src = `img/stickers/${stickerId}.png`
+    gCtx.drawImage(elImg, 550, 250, 200, 200)
+}
 
 function syncInputBoxes() {
     var meme = getMeme()
@@ -86,3 +95,9 @@ function syncInputBoxes() {
     document.querySelector('.stroke').value = currLine.stroke
     document.querySelector('.font').value = currLine.fontFam
 }
+function resetCanvas(){
+    resetLinesAndSticker()
+    renderMeme()
+    syncInputBoxes()
+}
+
