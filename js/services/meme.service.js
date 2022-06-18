@@ -7,7 +7,6 @@ function resetMeme() {
         selectedLineIdx: 0,
         isRandom: false,
         lines: [{
-            id: 0,
             txt: 'Enter your text here',
             align: 'left',
             fill: '#ffffff',
@@ -17,7 +16,6 @@ function resetMeme() {
             y: 150,
             fontFam: 'Impact'
         }, {
-            id: 0,
             txt: 'Enter your text here',
             align: 'left',
             fill: '#ffffff',
@@ -53,8 +51,6 @@ function setLineTxt(text) {
 }
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
-    gMeme.lines[0].id = imgId
-    gMeme.lines[1].id = imgId
     document.querySelector('.memes').style.display = 'none'
     document.querySelector('.canvas-layout').style.display = 'grid'
     document.querySelector('.search-bar').style.display = 'none'
@@ -105,7 +101,7 @@ function setRandomTxts() {
     }
 }
 function setFont(font) {
-    console.log('font: ',font)
+    console.log('font: ', font)
     for (var i = 0; i < gMeme.lines.length; i++) {
         if (font === '') {
             font = 'Impact'
@@ -113,4 +109,40 @@ function setFont(font) {
         gMeme.lines[gMeme.selectedLineIdx].fontFam = font
     }
     renderMeme()
+}
+function removeLine() {
+    if (gMeme.lines.length < 2) {
+        gMeme.lines[0] = {
+            txt: 'Enter your text here',
+            align: 'left',
+            fill: '#ffffff',
+            stroke: 'black',
+            font: 78,
+            x: 50,
+            y: 150,
+            fontFam: 'Impact'
+        }
+
+    } else {
+        gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+        gMeme.selectedLineIdx = 0
+    }
+    renderMeme()
+    syncInputBoxes()
+}
+function addLine() {
+    gMeme.lines.unshift({
+        txt: 'Enter your text here',
+        align: 'left',
+        fill: '#ffffff',
+        stroke: 'black',
+        font: 78,
+        x: 50,
+        y: 400,
+        fontFam: 'Impact'
+    })
+    gMeme.selectedLineIdx = ((gMeme.lines.length) - 1)
+    renderMeme()
+    switchLine()
+    syncInputBoxes()
 }

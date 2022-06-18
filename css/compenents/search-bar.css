@@ -7,21 +7,6 @@
     border-bottom: 0.25vh solid black;
 }
 
-.search-bar button {
-    background-color: var(--clr1);
-    color: rgb(255, 251, 251);
-    width: fit-content;
-    border-radius: 3vw;
-    transition: 500ms;
-}
-
-.search-bar button:hover {
-    background-color: var(--clr2);
-    color: black;
-    transition: 500ms;
-    cursor: pointer;
-}
-
 .search-bar>* {
     border-radius: 19px;
 }

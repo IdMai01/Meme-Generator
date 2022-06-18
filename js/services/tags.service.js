@@ -13,6 +13,11 @@ function renderTags() {
 
 function FilterByTag(tag) {
     init()
+    if(tag === ''){
+        document.querySelector('.tag-choice').value = tag
+        renderGallery()
+        return
+    }
     var images = getImages()
     var filteredImages = []
     for (var i = 0; i < images.length; i++) {

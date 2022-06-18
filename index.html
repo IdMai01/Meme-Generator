@@ -17,10 +17,11 @@
     </section>
     <section class="search-bar ">
         <label for="tag-choice">Filter by tags:</label>
-        <input onchange="FilterByTag(this.value)" list="filter-by-tags" id="tag-choice" name="tag-choice" />
+        <input onchange="FilterByTag(this.value)" list="filter-by-tags" id="tag-choice" class="tag-choice" name="tag-choice" />
         <datalist class="filter-by-tags" id="filter-by-tags">
             <option value=''>
             </datalist>
+            <button onclick="FilterByTag('')" class="reset-tags">Reset Filter</button>
             <button onclick="setRandomMeme()">Generate random meme</button>
     </section>
     <section class="main-layout">
@@ -37,14 +38,21 @@
                 <input oninput="setColor(this.value,'fill')" type="color" value="#ffffff" class="fill">
                 <input oninput="setColor(this.value,'stroke')" type="color" class="stroke">
             </div>
-            <button class="soft" onclick="changeFontSize(8)">+</button>
-            <button class="soft" onclick="changeFontSize(-8)">-</button>
+            <button class="soft" onclick="changeFontSize(8)">A+</button>
+            <button class="soft" onclick="changeFontSize(-8)">A-</button>
             <button class="soft" onclick="switchLine()">⇅</button>
             <button class="soft" onclick="switchLine()">⇅</button>
             <button class="save soft" onclick="saveMeme()">save</button>
             <button class="soft" onclick="moveLine(-1)">↑</button>
             <button class="soft" onclick="moveLine(1)">↓</button>
+            <button class="soft padding" onclick="addLine()">☰+</button>
             <button class="soft padding" onclick="removeLine()"><img src="/img/icons/trash.png" alt=""></button>
+            <section class="stickers">
+                <img onclick="setSticker(this.id)" id="1" class="selected-sticker" src="/img/stickers/1.png" alt="">
+                <img onclick="setSticker(this.id)" id="2" src="/img/stickers/2.png" alt="">
+                <img onclick="setSticker(this.id)" id="3" src="/img/stickers/3.png" alt="">
+                <img onclick="setSticker(this.id)" id="4" src="/img/stickers/4.png" alt="">
+            </section>
             <select class="font" onchange="setFont(this.value)" name="" id="">
                 <option class="Impact" value="Impact">Impact</option>
                 <option class="Lato-Bold" value="Lato-Bold">Lato-Bold</option>
@@ -55,6 +63,7 @@
             <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
         </div>
     </div>
+    <script src="js/services/stickers.service.js"></script>
     <script src="js/services/tags.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/utils.js"></script>

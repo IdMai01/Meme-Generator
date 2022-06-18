@@ -41,7 +41,7 @@ function init() {
 function renderMeme() {
     var currMeme = getMeme()
     var elImg = new Image
-    elImg.src = gImgs[currMeme.lines[0].id].url
+    elImg.src = gImgs[currMeme.selectedImgId].url
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
     drawTexts()
 }
@@ -73,11 +73,7 @@ function moveLine(num) {
     meme.lines[meme.selectedLineIdx].y += 20 * num
     renderMeme()
 }
-function removeLine() {
-    setLineTxt('')
-    switchLine()
-    syncInputBoxes()
-}
+
 function syncInputBoxes() {
     var meme = getMeme()
     var currLine = meme.lines[meme.selectedLineIdx]

@@ -6,20 +6,23 @@
     border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 10fr 10fr 8fr 10fr 5fr 6fr;
     grid-column-gap: 10px;
     grid-row-gap: 0px;
 }
 
 .costumization select {
+    display: flex;
+    align-self: center;
     border-radius: 10px;
     grid-row: 5;
     grid-column: 1/6;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     height: fit-content;
 }
 
 .costumization a {
+    align-self: center;
     background-color: rgb(255, 255, 255);
     grid-row: 6;
     grid-column: 2/5;
@@ -28,7 +31,7 @@
     border-radius: 15px;
     padding: 3px;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1rem;
     height: fit-content;
     border: 1px solid black;
     transition: 500ms;
@@ -36,7 +39,7 @@
 
 .costumization a:hover {
     background-color: rgb(203, 255, 255);
-    font-size: 2rem;
+    font-size: 1.1rem;
 }
 
 .color-pickers {
@@ -57,7 +60,34 @@
 button img {
     height: inherit;
 }
-svg{
 
-    fill: green;
+.stickers {
+    background-color: white;
+    grid-column: 1/6;
+    grid-row: 4;
+    border-radius: 10px;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100%;
+    align-self: center;
+}
+
+.stickers img {
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+    height: 70%;
+    border-radius: 6px;
+    transition: 100ms;
+}
+
+.stickers img:hover {
+    outline: 3px solid black;
+    cursor: pointer;
+}
+
+.selected-sticker {
+    outline: 3px solid black;
+    background-color: rgb(242, 147, 23);
 }
