@@ -5,6 +5,13 @@ var gStickers = [
     { id: 3, url: 'img/stickers/3.png' },
     { id: 4, url: 'img/stickers/4.png' },
 ]
-function setSticker(id) {
+function setSticker(id, element) {
+    for (var i = 0; i < 4; i++) {
+        if (i + 1 === +id) {
+            element.classList.toggle("selected-sticker")
+            continue
+        }
+        document.querySelector(`.sticker${i+1}`).classList.remove('selected-sticker')
+    }
 
 }

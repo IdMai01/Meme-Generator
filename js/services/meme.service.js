@@ -22,7 +22,7 @@ function resetMeme() {
             stroke: 'black',
             font: 78,
             x: 50,
-            y: 650,
+            y: 600,
             fontFam: 'Impact'
         }
         ]
@@ -33,7 +33,7 @@ function getMeme() {
     return gMeme
 }
 
-function drawTexts() {
+function drawTexts(isDownlad = false) {
     var currMeme = getMeme()
     for (var i = 0; i < currMeme.lines.length; i++) {
         var currLine = currMeme.lines[i]
@@ -43,6 +43,15 @@ function drawTexts() {
         gCtx.fillStyle = currLine.fill
         gCtx.fillText(currLine.txt, currLine.x, currLine.y)
         gCtx.strokeText(currLine.txt, currLine.x, currLine.y)
+        gCtx.stroke()
+        if(i === currMeme.selectedLineIdx && !isDownlad){
+        gCtx.strokeStyle = 'white'
+            var lineHeight = currLine.font * 1.2
+            var textWidth = gCtx.measureText(currLine.txt).width
+            gCtx.strokeRect(currLine.x,currLine.y, textWidth, lineHeight);
+            gCtx.textAlign = 'left';
+            gCtx.textBaseline = 'top';
+        }
     }
 }
 function setLineTxt(text) {
@@ -83,6 +92,7 @@ function switchLine() {
         gMeme.selectedLineIdx = 0
     }
     syncInputBoxes()
+    renderMeme()
 }
 function setRandomMeme() {
     var randomMemeId = getRandomIntInt(0, getMemesAmount())

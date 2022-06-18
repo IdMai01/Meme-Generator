@@ -22,15 +22,7 @@
         font-size: 4vw;
     }
 
-    .header-layout>*:hover {
-        font-size: 21px;
-    }
-
     .header-layout>*:nth-child(1) {
-        font-size: 6vw;
-    }
-
-    .header-layout>*:nth-child(1):hover {
         font-size: 6vw;
     }
 
@@ -57,9 +49,5 @@
 
     .header-layout>*:nth-child(1) {
         font-size: 20px;
-    }
-
-    .header-layout>*:nth-child(1):hover {
-        font-size: 23px;
     }
 }

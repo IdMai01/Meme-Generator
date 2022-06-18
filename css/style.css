@@ -9,7 +9,8 @@
 @import 'compenents/header.css';
 @import 'compenents/search-bar.css';
 @import 'compenents/meme-editor/canvas.css'; 
-@import 'compenents/meme-editor/costumization-box.css'; 
+@import 'compenents/meme-editor/costumization-box.css';
+@import 'compenents/meme-editor/stickers.css'; 
 @import 'compenents/gallery.css';
 
 @import 'mq/responsivity.css';

@@ -46,6 +46,7 @@ function getKey(){
     return STORAGE_KEY
 }
 function downloadImg(elLink) {
+    renderMeme(true)
     var imgContent = gCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
 }

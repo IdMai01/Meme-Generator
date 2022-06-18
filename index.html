@@ -48,10 +48,10 @@
             <button class="soft padding" onclick="addLine()">☰+</button>
             <button class="soft padding" onclick="removeLine()"><img src="img/icons/trash.png" alt=""></button>
             <section class="stickers">
-                <img onclick="setSticker(this.id)" id="1" class="selected-sticker" src="img/stickers/1.png" alt="">
-                <img onclick="setSticker(this.id)" id="2" src="img/stickers/2.png" alt="">
-                <img onclick="setSticker(this.id)" id="3" src="img/stickers/3.png" alt="">
-                <img onclick="setSticker(this.id)" id="4" src="img/stickers/4.png" alt="">
+                <img class="sticker1" onclick="setSticker(this.id,this)" id="1" src="img/stickers/1.png" alt="">
+                <img class="sticker2" onclick="setSticker(this.id,this)" id="2" src="img/stickers/2.png" alt="">
+                <img class="sticker3" onclick="setSticker(this.id,this)" id="3" src="img/stickers/3.png" alt="">
+                <img class="sticker4" onclick="setSticker(this.id,this)" id="4" src="img/stickers/4.png" alt="">
             </section>
             <select class="font" onchange="setFont(this.value)" name="" id="">
                 <option class="Impact" value="Impact">Impact</option>

@@ -38,12 +38,12 @@ function init() {
     renderGallery()
     renderMeme()
 }
-function renderMeme() {
+function renderMeme(isDownload = false) {
     var currMeme = getMeme()
     var elImg = new Image
     elImg.src = gImgs[currMeme.selectedImgId].url
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
-    drawTexts()
+    drawTexts(isDownload)
 }
 function getImages() {
     return gImgs
