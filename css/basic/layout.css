@@ -1,22 +1,23 @@
-.header-layout{
+.header-layout {
     background-color: var(--clr1);
     font-family: Lato-Bold;
     height: 10vh;
     font-size: 1rem;
     padding-left: 2.5%;
     color: var(--clr0);
-    border-bottom: 0.45vh solid black;
+    border-bottom: 0.35vh solid black;
 }
-.header-layout>*{
-margin-right: 10%;
+
+.header-layout>* {
+    margin-right: 10%;
 }
 
 .canvas-layout {
     height: 77vh;
     display: none;
     margin-left: 6vw;
-    grid-template-columns: minmax(350px,45vw) 0.65fr;
-    grid-template-rows: minmax(350px,35vw);
+    grid-template-columns: minmax(350px, 45vw) 0.65fr;
+    grid-template-rows: minmax(350px, 35vw);
     column-gap: 6vw;
 }
 
