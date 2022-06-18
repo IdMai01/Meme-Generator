@@ -44,7 +44,8 @@
             <button class="save soft" onclick="saveMeme()">save</button>
             <button class="soft" onclick="moveLine(-1)">↑</button>
             <button class="soft" onclick="moveLine(1)">↓</button>
-            <select onchange="setFont(this.value)" name="" id="">
+            <button class="soft padding" onclick="removeLine()"><img src="/img/icons/trash.png" alt=""></button>
+            <select class="font" onchange="setFont(this.value)" name="" id="">
                 <option class="Impact" value="Impact">Impact</option>
                 <option class="Lato-Bold" value="Lato-Bold">Lato-Bold</option>
                 <option class="Ubuntu-title" value="Ubuntu-title">Ubuntu-title</option>

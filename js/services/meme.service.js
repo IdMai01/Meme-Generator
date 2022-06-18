@@ -10,7 +10,7 @@ function resetMeme() {
             id: 0,
             txt: 'Enter your text here',
             align: 'left',
-            fill: 'white',
+            fill: '#ffffff',
             stroke: 'black',
             font: 78,
             x: 50,
@@ -20,7 +20,7 @@ function resetMeme() {
             id: 0,
             txt: 'Enter your text here',
             align: 'left',
-            fill: 'white',
+            fill: '#ffffff',
             stroke: 'black',
             font: 78,
             x: 50,
@@ -86,6 +86,7 @@ function switchLine() {
     } else {
         gMeme.selectedLineIdx = 0
     }
+    syncInputBoxes()
 }
 function setRandomMeme() {
     var randomMemeId = getRandomIntInt(0, getMemesAmount())
@@ -109,7 +110,7 @@ function setFont(font) {
         if (font === '') {
             font = 'Impact'
         }
-        gMeme.lines[i].fontFam = font
+        gMeme.lines[gMeme.selectedLineIdx].fontFam = font
     }
     renderMeme()
 }

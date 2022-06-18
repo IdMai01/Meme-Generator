@@ -1,0 +1,63 @@
+.costumization {
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: var(--btn1);
+    border-radius: 00.8vw;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+}
+
+.costumization select {
+    border-radius: 10px;
+    grid-row: 5;
+    grid-column: 1/6;
+    font-size: 1.4rem;
+    height: fit-content;
+}
+
+.costumization a {
+    background-color: rgb(255, 255, 255);
+    grid-row: 6;
+    grid-column: 2/5;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    padding: 3px;
+    text-align: center;
+    font-size: 1.6rem;
+    height: fit-content;
+    border: 1px solid black;
+    transition: 500ms;
+}
+
+.costumization a:hover {
+    background-color: rgb(203, 255, 255);
+    font-size: 2rem;
+}
+
+.color-pickers {
+    padding-right: 6px;
+    padding-top: 6px;
+}
+
+.txt-input {
+    grid-column: 1 / 5;
+    height: 50%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    border: 2px solid black;
+    border-radius: 0.8vw;
+}
+
+button img {
+    height: inherit;
+}
+svg{
+
+    fill: green;
+}

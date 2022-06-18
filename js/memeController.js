@@ -73,3 +73,20 @@ function moveLine(num) {
     meme.lines[meme.selectedLineIdx].y += 20 * num
     renderMeme()
 }
+function removeLine() {
+    setLineTxt('')
+    switchLine()
+    syncInputBoxes()
+}
+function syncInputBoxes() {
+    var meme = getMeme()
+    var currLine = meme.lines[meme.selectedLineIdx]
+    if (currLine.txt === '' || currLine.txt === 'Enter your text here') {
+        document.querySelector('.txt-input').value = ''
+    } else {
+        document.querySelector('.txt-input').value = currLine.txt
+    }
+    document.querySelector('.fill').value = currLine.fill
+    document.querySelector('.stroke').value = currLine.stroke
+    document.querySelector('.font').value = currLine.fontFam
+}
