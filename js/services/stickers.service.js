@@ -5,24 +5,26 @@ var gStickers = [
     { id: 3, url: 'img/stickers/3.png' },
     { id: 4, url: 'img/stickers/4.png' },
 ]
-var gStickerLocation = { x: 450, y: 150, size: 300, }
-var currSticker
+var gIsStickerOn = false
+var gStickerLocation = { x: 450, y: 200, size: 300, }
+var gCurrSticker
 function setSticker(id, element = false) {
     for (var i = 0; i < 4; i++) {
         if (i + 1 === +id && element) {
+            gIsStickerOn = gIsStickerOn ? false : true;
             element.classList.toggle("selected-sticker")
-            if (currSticker !== id) {
-                currSticker = id
+            if (gCurrSticker !== id) {
+                gCurrSticker = id
             }
             else {
-                currSticker = false
+                gCurrSticker = false
             }
             continue
         }
         document.querySelector(`.sticker${i + 1}`).classList.remove('selected-sticker')
     }
     var meme = getMeme()
-    meme.currSticker = currSticker
+    meme.currSticker = gCurrSticker
     renderMeme()
 }
 function getStickerLocation() {
@@ -32,14 +34,20 @@ function getStickers() {
     return gStickers
 }
 function getCurrSticker() {
-    return currSticker
+    return gCurrSticker
 }
 function setCurrSticker(value = false) {
-    if (currSticker) {
-        setSticker(currSticker)
+    if (gCurrSticker) {
+        setSticker(gCurrSticker)
     }
-    currSticker = value
+    gCurrSticker = value
 }
 function setStickerDrag(isDrag) {
     gStickerLocation.isDrag = isDrag
+}
+function resetSticker() {
+    gStickerLocation = { x: 450, y: 200, size: 300, }
+}
+function getStickerStatus() {
+    return gIsStickerOn
 }

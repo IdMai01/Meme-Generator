@@ -22,6 +22,7 @@ var gImgs = [
     { id: 18, url: 'img/18.jpg', keywords: ['funny', 'confused'] },
 
 ]
+const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 var gCanvas
 var gCtx
 var gLastText = {
@@ -29,7 +30,6 @@ var gLastText = {
     y: 100,
     txt: ''
 }
-const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
 function init() {
     resetMeme()
@@ -67,6 +67,7 @@ function goToHomepage() {
     document.querySelector('.memes').style.display = 'grid'
     document.querySelector('.canvas-layout').style.display = 'none'
     document.querySelector('.search-bar').style.display = 'block'
+    resetLinesAndSticker()
     init()
 }
 function renderSavedMemes() {
@@ -74,7 +75,6 @@ function renderSavedMemes() {
     // goToHomepage()
     alert('this feature is not supported yet')
 }
-
 function moveLine(num) {
     var meme = getMeme()
     meme.lines[meme.selectedLineIdx].y += 20 * num
@@ -85,7 +85,6 @@ function addSticker(stickerId, stickerLocation) {
     elImg.src = `img/stickers/${stickerId}.png`
     gCtx.drawImage(elImg, stickerLocation.x, stickerLocation.y, stickerLocation.size, stickerLocation.size)
 }
-
 function syncInputBoxes() {
     var meme = getMeme()
     var currLine = meme.lines[meme.selectedLineIdx]
@@ -99,8 +98,8 @@ function syncInputBoxes() {
     document.querySelector('.font').value = currLine.fontFam
 }
 function resetCanvas() {
+    resetSticker()
     resetLinesAndSticker()
     renderMeme()
     syncInputBoxes()
 }
-

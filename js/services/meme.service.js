@@ -14,7 +14,7 @@ function resetMeme() {
             font: 78,
             x: 50,
             y: 150,
-            fontFam: 'Impact'
+            fontFam: 'Impact',
         }, {
             txt: 'Enter your text here',
             align: 'left',
@@ -23,16 +23,14 @@ function resetMeme() {
             font: 78,
             x: 50,
             y: 600,
-            fontFam: 'Impact'
+            fontFam: 'Impact',
         }
         ]
     }
 }
-
 function getMeme() {
     return gMeme
 }
-
 function drawTexts(isDownlad = false) {
     var currMeme = getMeme()
     for (var i = 0; i < currMeme.lines.length; i++) {
@@ -79,7 +77,6 @@ function getTxtParams() {
     return gMeme.lines[gMeme.selectedLineIdx]
 }
 function changeFontSize(num) {
-    console.log('gMeme.currSticker: ',gMeme.currSticker)
     if (gMeme.currSticker) {
         var currSticker = getStickerLocation()
         currSticker.size += num * 5
@@ -170,7 +167,8 @@ function resetLinesAndSticker() {
         font: 78,
         x: 50,
         y: 150,
-        fontFam: 'Impact'
+        fontFam: 'Impact',
+        isDrag: false
     }, {
         txt: 'Enter your text here',
         align: 'left',
@@ -179,7 +177,33 @@ function resetLinesAndSticker() {
         font: 78,
         x: 50,
         y: 600,
-        fontFam: 'Impact'
+        fontFam: 'Impact',
+        isDrag: false
     }
     ]
+}
+function isTextBoxClicked(clickedPos) {
+    clickedPos.y = clickedPos.y * 1.66
+    var pos = gMeme
+    for (var i = 0; i < pos.lines.length; i++) {
+        var currLine = pos.lines[i]
+        var textWidth = 380
+        var textHeight = currLine.font * 1.2
+        console.log('currLine.x: ', currLine.x, currLine.y, clickedPos)
+        if ((currLine.x <= clickedPos.x && currLine.x + textWidth >= clickedPos.x) && (currLine.y + textHeight >= clickedPos.y && currLine.y <= clickedPos.y)) {
+            setDraggedLineIdx(i)
+            gMeme.selectedLineIdx = i
+            renderMeme()
+            return true
+        }
+    }
+    return false
+}
+function changeTextLocation(x, y, lineIdx) {
+    var currLine = gMeme.lines[lineIdx]
+    currLine.x = x
+    currLine.y = y
+}
+function setLineIsDrag(isDrag = false, lineIdx) {
+    gMeme.lines[lineIdx].isDrag = isDrag
 }

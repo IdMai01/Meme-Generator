@@ -1,39 +1,64 @@
+'use strict'
 var gStartPos
+var draggedLineIdx = 0
 
+function setDraggedLineIdx(lineIdx) {
+    draggedLineIdx = lineIdx
+}
 function addListeners() {
     addMouseListeners()
     addTouchListeners()
 }
 function addMouseListeners() {
-    gCanvas.addEventListener('mousemove', onMove)
     gCanvas.addEventListener('mousedown', onDown)
+    gCanvas.addEventListener('mousemove', onMove)
     gCanvas.addEventListener('mouseup', onUp)
 }
 function onMove(ev) {
     var sticker = getStickerLocation()
+    var meme = getMeme()
+    var currLine = meme.lines[draggedLineIdx]
     if (sticker.isDrag) {
         const pos = getEvPos(ev)
-        sticker.y += pos.y - gStartPos.y
-        sticker.x += pos.x - gStartPos.x
+        sticker.x += (pos.x - gStartPos.x)
+        sticker.y += (pos.y- gStartPos.y)
+        gStartPos = pos
+        renderMeme()
+    }
+    if (currLine.isDrag) {
+        const pos = getEvPos(ev)
+        changeTextLocation((pos.x) - 40, (pos.y * 1.6), draggedLineIdx)
         gStartPos = pos
         renderMeme()
     }
 }
 function onUp() {
     setStickerDrag(false)
-    document.body.style.cursor = 'grab'
+    setLineIsDrag(false, draggedLineIdx)
+    document.body.style.cursor = 'auto'
 }
 function onDown(ev) {
     const pos = getEvPos(ev)
-    if (!isStickerClicked(pos)) return
-    setStickerDrag(true)
-    gStartPos = pos
-    document.body.style.cursor = 'grabbing'
+    if (isStickerClicked(pos)) {
+        setStickerDrag(true)
+        gStartPos = pos
+        document.body.style.cursor = 'grabbing'
+    }
+    if (isTextBoxClicked(pos)) {
+        setLineIsDrag(true, draggedLineIdx)
+        var meme = getMeme()
+        gStartPos = meme.lines[draggedLineIdx]
+        document.body.style.cursor = 'grabbing'
+    }
+    else {
+        return
+    }
 
-} function addTouchListeners() {
-    gElCanvas.addEventListener('touchmove', onMove)
-    gElCanvas.addEventListener('touchstart', onDown)
-    gElCanvas.addEventListener('touchend', onUp)
+}
+function addTouchListeners() {
+    gCanvas.addEventListener('touchmove', onMove)
+    gCanvas.addEventListener('touchstart', onDown)
+    gCanvas.addEventListener('touchend', onUp)
 }
 function getEvPos(ev) {
     var pos = {
@@ -51,7 +76,10 @@ function getEvPos(ev) {
     return pos
 }
 function isStickerClicked(clickedPos) {
+    if (!getStickerStatus()) {
+        return
+    }
     const pos = getStickerLocation()
-    return (pos.x - pos.size / 4 <= clickedPos.x && pos.x + pos.size / 4 >= clickedPos.x) && (pos.y - pos.size / 2 <= clickedPos.y && pos.y + pos.size / 2 >= clickedPos.y)
+    return (pos.x - pos.size / 2 <= clickedPos.x && pos.x + pos.size / 2 >= clickedPos.x) && (pos.y - pos.size / 2 <= clickedPos.y && pos.y + pos.size / 2 >= clickedPos.y)
 }
 
