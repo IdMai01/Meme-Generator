@@ -79,11 +79,15 @@ function getTxtParams() {
     return gMeme.lines[gMeme.selectedLineIdx]
 }
 function changeFontSize(num) {
-    var currLine = gMeme.lines[gMeme.selectedLineIdx]
-    currLine.font += num
-    var elTxt = document.querySelector('.txt-input')
+    console.log('gMeme.currSticker: ',gMeme.currSticker)
+    if (gMeme.currSticker) {
+        var currSticker = getStickerLocation()
+        currSticker.size += num * 5
+    } else {
+        var currLine = gMeme.lines[gMeme.selectedLineIdx]
+        currLine.font += num
+    }
     renderMeme()
-    // drawTexts(elTxt.value)
 }
 function switchLine() {
     if (gMeme.selectedLineIdx < gMeme.lines.length - 1) {

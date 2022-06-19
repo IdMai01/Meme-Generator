@@ -5,32 +5,41 @@ var gStickers = [
     { id: 3, url: 'img/stickers/3.png' },
     { id: 4, url: 'img/stickers/4.png' },
 ]
-var gCurrSticker
+var gStickerLocation = { x: 450, y: 150, size: 300, }
+var currSticker
 function setSticker(id, element = false) {
     for (var i = 0; i < 4; i++) {
         if (i + 1 === +id && element) {
             element.classList.toggle("selected-sticker")
-            if (gCurrSticker !== id) {
-                gCurrSticker = id
+            if (currSticker !== id) {
+                currSticker = id
             }
             else {
-                gCurrSticker = false
+                currSticker = false
             }
             continue
         }
         document.querySelector(`.sticker${i + 1}`).classList.remove('selected-sticker')
     }
+    var meme = getMeme()
+    meme.currSticker = currSticker
     renderMeme()
+}
+function getStickerLocation() {
+    return gStickerLocation
 }
 function getStickers() {
     return gStickers
 }
 function getCurrSticker() {
-    return gCurrSticker
+    return currSticker
 }
 function setCurrSticker(value = false) {
-    if (gCurrSticker) {
-        setSticker(gCurrSticker)
+    if (currSticker) {
+        setSticker(currSticker)
     }
-    gCurrSticker = value
+    currSticker = value
+}
+function setStickerDrag(isDrag) {
+    gStickerLocation.isDrag = isDrag
 }

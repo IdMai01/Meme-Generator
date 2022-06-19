@@ -29,6 +29,7 @@ var gLastText = {
     y: 100,
     txt: ''
 }
+const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
 function init() {
     resetMeme()
@@ -37,16 +38,18 @@ function init() {
     gCtx = gCanvas.getContext('2d')
     renderGallery()
     renderMeme()
+    addListeners()
 }
 function renderMeme(isDownload = false) {
     var currSticker = getCurrSticker()
+    var stickerLocation = getStickerLocation()
     var currMeme = getMeme()
     var elImg = new Image
     elImg.src = gImgs[currMeme.selectedImgId].url
     gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
     drawTexts(isDownload)
-    if(currSticker){
-        addSticker(currSticker)
+    if (currSticker) {
+        addSticker(currSticker, stickerLocation)
     }
 }
 function getImages() {
@@ -77,10 +80,10 @@ function moveLine(num) {
     meme.lines[meme.selectedLineIdx].y += 20 * num
     renderMeme()
 }
-function addSticker(stickerId) {
+function addSticker(stickerId, stickerLocation) {
     var elImg = new Image
     elImg.src = `img/stickers/${stickerId}.png`
-    gCtx.drawImage(elImg, 550, 250, 200, 200)
+    gCtx.drawImage(elImg, stickerLocation.x, stickerLocation.y, stickerLocation.size, stickerLocation.size)
 }
 
 function syncInputBoxes() {
@@ -95,7 +98,7 @@ function syncInputBoxes() {
     document.querySelector('.stroke').value = currLine.stroke
     document.querySelector('.font').value = currLine.fontFam
 }
-function resetCanvas(){
+function resetCanvas() {
     resetLinesAndSticker()
     renderMeme()
     syncInputBoxes()
