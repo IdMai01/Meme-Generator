@@ -1,25 +1,19 @@
-.header-layout>* {
-    color: rgb(24, 19, 19);
-    font-size: 1.6rem;
-    width: fit-content;
-    background-color: transparent;
-    border-color: transparent;
-    transition: 500ms;
-}
-
 .header-layout button:hover {
-    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
-.header-layout>*:nth-child(1) {
+.header-layout .logo>* {
     color: rgb(255, 255, 255);
     -webkit-text-stroke: 1px rgb(0, 0, 0);
-    font-size: 2.4rem;
+    font-size: 1.7rem;
     transition: 300ms;
     font-family: Impact, sans-serif;
+    position:static;
 }
-
-.header-layout>*:nth-child(1):hover {
-    color: rgba(255, 255, 255, 0.841);
+.logo,.logo>*{
+    height: fit-content;
+}
+.logo{
+    width: 50vw;
+    left: 30px;
 }

@@ -11,59 +11,65 @@
 
 <body onload="init()">
     <section class="header-layout flex center">
-        <button class="header" onclick="goToHomepage()">Meme generator</button>
-        <button onclick="renderSavedMemes()">My memes</button>
-        <button onclick="goToHomepage()">back to HomePage</button>
-    </section>
-    <section class="search-bar ">
-        <label for="tag-choice">Filter by tags:</label>
-        <input onchange="FilterByTag(this.value)" list="filter-by-tags" id="tag-choice" class="tag-choice" name="tag-choice" />
-        <datalist class="filter-by-tags" id="filter-by-tags">
-            <option value=''>
-            </datalist>
-            <button onclick="FilterByTag('')" class="reset-tags">Reset Filter</button>
-            <button onclick="setRandomMeme()">Generate random meme</button>
-    </section>
-    <section class="main-layout">
-        <section class="gallery">
-            <div class="memes wrapper"></div>
-        </section>
-    </section>
-    <div class="canvas-layout">
-        <canvas id="my-canvas" height="750" width="750"></canvas>
-        <div class="costumization">
-            <input type="text" oninput="setLineTxt(this.value)" placeholder="Enter your text here" class="txt-input"
-                value="" id="txt-input">
-            <div class="color-pickers">
-                <input oninput="setColor(this.value,'fill')" type="color" value="#ffffff" class="fill">
-                <input oninput="setColor(this.value,'stroke')" type="color" class="stroke">
-            </div>
-            <button class="soft" onclick="changeFontSize(8)">A+</button>
-            <button class="soft" onclick="changeFontSize(-8)">A-</button>
-            <button class="soft" onclick="switchLine()">⇅</button>
-            <button class="soft" onclick="switchLine()">⇅</button>
-            <button class="save soft" onclick="saveMeme()">save</button>
-            <button class="soft" onclick="moveLine(-1)">↑</button>
-            <button class="soft" onclick="moveLine(1)">↓</button>
-            <button class="soft padding" onclick="addLine()">☰+</button>
-            <button class="soft padding" onclick="removeLine()"><img src="img/icons/trash.png" alt=""></button>
-            <button class="soft padding" onclick="resetCanvas()">Reset</button>
-            <section class="stickers">
-                <img class="sticker1" onclick="setSticker(this.id,this)" id="1" src="img/stickers/1.png" alt="">
-                <img class="sticker2" onclick="setSticker(this.id,this)" id="2" src="img/stickers/2.png" alt="">
-                <img class="sticker3" onclick="setSticker(this.id,this)" id="3" src="img/stickers/3.png" alt="">
-                <img class="sticker4" onclick="setSticker(this.id,this)" id="4" src="img/stickers/4.png" alt="">
-            </section>
-            <select class="font" onchange="setFont(this.value)" name="" id="">
-                <option class="Impact" value="Impact">Impact</option>
-                <option class="Lato-Bold" value="Lato-Bold">Lato-Bold</option>
-                <option class="Ubuntu-title" value="Ubuntu-title">Ubuntu-title</option>
-                <option class="eurofurence" value="eurofurence">eurofurence</option>
-                <option class="fa-brands" value="fa-brands">fa-brands</option>
-            </select>
-            <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
+        <div class="logo">
+            <button class="header" onclick="goToHomepage()">Meme generator</button>
         </div>
+        <button onclick="renderSavedMemes()">My memes</button>
+        <button onclick="goToHomepage()">back to Home page</button>
+    </section>
+    <div class="gallery-layout flex center">
+        <section class="main-layout">
+            <section class="search-bar flex center">
+                <label for="tag-choice">Filter by tags:</label>
+                <input onchange="FilterByTag(this.value)" list="filter-by-tags" id="tag-choice" class="tag-choice"
+                    name="tag-choice" />
+                <datalist class="filter-by-tags" id="filter-by-tags">
+                    <option value=''>
+                </datalist>
+                <button onclick="FilterByTag('')" class="reset-tags">Reset Filter</button>
+                <button onclick="setRandomMeme()">Generate random meme</button>
+            </section>
+            <section class="gallery flex center">
+                <div class="memes wrapper"></div>
+            </section>
+        </section>
     </div>
+        <div class="canvas-layout">
+            <canvas id="my-canvas" height="750" width="750"></canvas>
+            <div class="costumization">
+                <input type="text" oninput="setLineTxt(this.value)" placeholder="Enter your text here" class="txt-input"
+                    value="" id="txt-input">
+                <div class="color-pickers">
+                    <input oninput="setColor(this.value,'fill')" type="color" value="#ffffff" class="fill">
+                    <input oninput="setColor(this.value,'stroke')" type="color" class="stroke">
+                </div>
+                <button class="soft" onclick="changeFontSize(8)">A+</button>
+                <button class="soft" onclick="changeFontSize(-8)">A-</button>
+                <button class="soft" onclick="switchLine()">⇅</button>
+                <button class="soft" onclick="switchLine()">⇅</button>
+                <button class="save soft" onclick="saveMeme()">save</button>
+                <button class="soft" onclick="moveLine(-1)">↑</button>
+                <button class="soft" onclick="moveLine(1)">↓</button>
+                <button class="soft padding" onclick="addLine()">☰+</button>
+                <button class="soft padding" onclick="removeLine()"><img src="img/icons/trash.png" alt=""></button>
+                <button class="soft padding" onclick="resetCanvas()">Reset</button>
+                <section class="stickers">
+                    <img class="sticker1" onclick="setSticker(this.id,this)" id="1" src="img/stickers/1.png" alt="">
+                    <img class="sticker2" onclick="setSticker(this.id,this)" id="2" src="img/stickers/2.png" alt="">
+                    <img class="sticker3" onclick="setSticker(this.id,this)" id="3" src="img/stickers/3.png" alt="">
+                    <img class="sticker4" onclick="setSticker(this.id,this)" id="4" src="img/stickers/4.png" alt="">
+                </section>
+                <select class="font" onchange="setFont(this.value)" name="" id="">
+                    <option class="Impact" value="Impact">Impact</option>
+                    <option class="Lato-Bold" value="Lato-Bold">Lato-Bold</option>
+                    <option class="Ubuntu-title" value="Ubuntu-title">Ubuntu-title</option>
+                    <option class="eurofurence" value="eurofurence">eurofurence</option>
+                    <option class="fa-brands" value="fa-brands">fa-brands</option>
+                </select>
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-meme.jpg">Download as jpeg</a>
+            </div>
+        </div>
+
     <script src="js/services/drag-and-drop.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/stickers.service.js"></script>

@@ -58,9 +58,8 @@ function setLineTxt(text) {
 }
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
-    document.querySelector('.memes').style.display = 'none'
+    document.querySelector('.gallery-layout').style.display = 'none'
     document.querySelector('.canvas-layout').style.display = 'grid'
-    document.querySelector('.search-bar').style.display = 'none'
     renderMeme()
 }
 function setColor(color, type) {

@@ -1,13 +1,21 @@
 .search-bar {
-    font-family: Lato-Bold;
+    background-color: rgba(255, 75, 75, 0.192);
+    border-radius: inherit;
+    display: flex;
     height: 8vh;
-    padding-top: 0.5%;
-    padding-left: 4%;
-    padding-bottom: 0.5%;
-    border-bottom: 0.25vh solid black;
-    margin-bottom: 4vh;
+    font-family: Lato-Bold;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .search-bar>* {
     border-radius: 19px;
+}
+
+.search-bar button {
+    height: fit-content;
+}
+
+.search-bar input {
+    margin-left: 10px;
 }

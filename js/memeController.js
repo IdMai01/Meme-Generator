@@ -64,15 +64,12 @@ function getMemesAmount() {
     return gImgs.length
 }
 function goToHomepage() {
-    document.querySelector('.memes').style.display = 'grid'
+    document.querySelector('.gallery-layout').style.display = 'flex'
     document.querySelector('.canvas-layout').style.display = 'none'
-    document.querySelector('.search-bar').style.display = 'block'
     resetLinesAndSticker()
     init()
 }
 function renderSavedMemes() {
-    // var memes = loadFromStorage(getKey())
-    // goToHomepage()
     alert('this feature is not supported yet')
 }
 function moveLine(num) {
@@ -98,8 +95,8 @@ function syncInputBoxes() {
     document.querySelector('.font').value = currLine.fontFam
 }
 function resetCanvas() {
-    resetSticker()
     resetLinesAndSticker()
+    resetSticker()
     renderMeme()
     syncInputBoxes()
 }
